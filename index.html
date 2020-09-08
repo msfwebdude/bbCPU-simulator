@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bbCPU Simulator</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rajdhani|VT323">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<br />
+	<div class="title">bb-CPU SIMULATOR</div>
+	<div class="subtitle">In the style of Star Trek LCARS</div>
+	<br />
+	<div id="arena">
+		<table>
+			<tr>
+				<td colspan="12" id="masterButtonsCell">
+					<button id="tickButton"  onclick="clock.tick()">CLOCK TICK</button><br />
+					<button id="resetButton" onclick="resetAll()">RESET ALL</button>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><div id="busLabel" class="labels">BUS</div></td>
+				<td><div id="busValue" class="values">XXX</div></td>
+				<td><div id="busSpace" class="spacer"></div></td>
+				<td><div id="busBadge" class="endBadge"></div></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="12">&nbsp;</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><div id="pLabel" class="labels">PRG COUNTER</div></td>
+				<td><div id="pValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="programCounter.clickOut(this)"   class="buttonInactive">CO</button>
+					<button onclick="programCounter.clickJump(this)"  class="buttonInactive">J&nbsp;</button>
+					<button onclick="programCounter.clickCount(this)" class="buttonInactive">CE</button>
+				</td>
+				<td><div id="pBadge" class="endBadge"></div></td>
+			</tr>
+			<tr>
+				<td><div id="mLabel" class="labels">MEM ADDR REG</div></td>
+				<td><div id="mValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="memAddrRegister.clickLoad(this)" class="buttonInactive">MI</button>
+				</td>
+				<td><div id="mBadge" class="endBadge"></div></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><div id="aLabel" class="labels">A REGISTER</div></td>
+				<td><div id="aValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="aRegister.clickLoad(this)" class="buttonInactive">AI</button>
+					<button onclick="aRegister.clickOut(this)"  class="buttonInactive">AO</button>
+				</td>
+				<td><div id="aBadge" class="endBadge"></div></td>
+			</tr>
+			<tr>
+				<td><div id="rLabel" class="labels">RAM MEMORY</div></td>
+				<td><div id="rValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="ramMemory.clickLoad(this)" class="buttonInactive">RI</button>
+					<button onclick="ramMemory.clickOut(this)"  class="buttonInactive">RO</button>
+				</td>
+				<td><div id="rBadge" class="endBadge"></div></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><div id="aluLabel" class="labels">ALU</div></td>
+				<td><div id="aluValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="aluRegister.clickOut(this)"      class="buttonInactive">&#x3A3;O</button>
+					<button onclick="aluRegister.clickSubtract(this)" class="buttonInactive">SU</button>
+					<span class="indicators" id="carryIndicator"></span>
+				</td>
+				<td><div id="aluBadge" class="endBadge"></div></td>
+			</tr>
+			<tr>
+				<td><div id="iLabel" class="labels">INSTRUCT REG</div></td>
+				<td><div id="iValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="instrRegister.clickLoad(this)" class="buttonInactive">II</button>
+					<button onclick="instrRegister.clickOut(this)"  class="buttonInactive">IO</button>
+				</td>
+				<td><div id="iBadge" class="endBadge"></div></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><div id="bLabel" class="labels">B REGISTER</div></td>
+				<td><div id="bValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="bRegister.clickLoad(this)" class="buttonInactive">BI</button>
+					<button onclick="bRegister.clickOut(this)"  class="buttonInactive">BO</button>
+				</td>
+				<td><div id="bBadge" class="endBadge"></div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><div id="oLabel" class="labels">OUT REGISTER</div></td>
+				<td><div id="oValue" class="values">XXX</div></td>
+				<td>
+					<button onclick="outputRegister.clickLoad(this)" class="buttonInactive">OI</button>
+				</td>
+				<td><div id="oBadge" class="endBadge"></div></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td colspan="2"><div id="dLabel" class="largeLabel">OUTPUT:&nbsp;&nbsp;</div></td>
+				<td colspan="2"><div id="dValue" class="largeValues">XXX</div></td>
+			</tr>
+		</table>
+	</div>
+	<br />
+    <div class="footer">
+        Project on <a href="https://github.com/msfwebdude/bbCPU-simulator" target="_blank">GitHub</a>&nbsp;|&nbsp;
+        <a href="https://github.com/msfwebdude/bbCPU-simulator" target="_blank">
+            <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/msfwebdude/bbCPU-simulator?color=silver&style=plastic">
+        </a>
+        <a href="https://github.com/msfwebdude/bbCPU-simulator/blob/master/LICENSE" target="_blank">
+            <img src="https://img.shields.io/github/license/msfwebdude/bbCPU-simulator?color=silver&style=plastic" alt="GitHub">
+        </a>&nbsp;|&nbsp;
+        &copy;&nbsp;<span id="currentYear"></span>&nbsp;Mike&nbsp;Firoved
+        
+    </div>
+	
+	<p><br /></p>
+	<script type="text/javascript" src="assets/js/main.js">
+	</script>
+</body>
+</html> 

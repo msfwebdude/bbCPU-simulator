@@ -1,0 +1,324 @@
+:root
+{
+    --lcars-radius: 19px;
+    --transition-s: 0.4s;
+}
+
+body
+{
+    background-color: darkslategray;
+}
+
+.title
+{
+    font-family: "Roboto Mono", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28pt;
+    width: 1020px;
+    margin: auto auto;
+    color: #FFFFFE;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+}
+.subtitle
+{
+    font-family:  Verdana, Tahoma, sans-serif;
+    font-size: 9pt;
+    width: 1020px;
+    margin: auto auto;
+    color: #CCD4CC;
+    text-align: center;
+}
+
+.footer {
+    color: #F0F0F0;
+    font-family: 'Lucida Console', monospace;
+    font-size: 9pt;
+    margin: auto;
+    text-align: center;
+    width: 65%;
+}
+
+.footer a {
+    color: #FFFFFE;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.footer a img {
+    vertical-align: middle;
+}
+
+
+
+#arena
+{
+    width: 1020px;
+    margin: auto auto;
+    font-family: "Rajdhani", monospace;
+    background-color: black;
+    padding: 30px;
+    border-radius: var(--lcars-radius);
+}
+
+
+
+.values
+{
+    color: #FFFFFE;
+    background-color: gray;
+    width: 105px;
+    height: 34px;
+    padding-top: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: right;
+    letter-spacing: 3px;
+    font-family: "Roboto Mono", monospace;
+}
+.largeValues
+{
+    color: limegreen;
+    background-color: #404040;
+    font-family: "VT323", monospace;
+    font-size: 46pt;
+    font-weight: normal;
+    text-align: right;
+    padding-right: 11px;
+    height: 68px;
+}
+
+.labels
+{
+    color: #FFFFFE;
+    background-color: gray;
+    height: 33px;
+    padding-top: 11px;
+    padding-left: 19px;
+    padding-right: 6px;
+    border-top-left-radius: var(--lcars-radius);
+    border-bottom-left-radius: var(--lcars-radius);
+    font-family: "Roboto Mono", monospace;
+}
+.largeLabel
+{
+    color: darkred;
+    font-family: "Roboto Mono", monospace;
+    font-size: 46px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.indicators
+{
+    color: red;
+    padding-left: 14px;
+}
+
+
+.buttonInactive 
+{
+    background-color: #CCD4CC;
+    font-weight: normal;
+    width: 44px;
+    height: 44px;
+    border: none;
+    transition-duration: var(--transition-s);
+    cursor: pointer;
+}
+
+.buttonInactive:hover 
+{
+    background-color: yellow;
+}
+.buttonInactive:active 
+{
+    background-color: white;
+}
+
+.buttonActive
+{
+    background-color: lime;
+    font-weight: bold;
+    width: 44px;
+    height: 44px;
+    border: none;
+    cursor: pointer;
+}
+
+.spacer
+{
+    width: 0px;
+}
+
+.endBadge
+{
+    width: 22px;
+    height: 44px;
+    border-top-right-radius: var(--lcars-radius);
+    border-bottom-right-radius: var(--lcars-radius);
+    background-color: gray;
+    margin-left: 0px;
+}
+
+#masterButtonsCell
+{
+    text-align: right;
+    padding-bottom: 22px;
+}
+#tickButton
+{
+    background-color: #FF8080;
+    border: none;
+    height: 44px;
+    width: 122px;
+    border-top-right-radius: var(--lcars-radius);
+    border-bottom-right-radius: var(--lcars-radius);
+    transition-duration: var(--transition-s);
+    cursor: pointer;
+    font-family: "Roboto Mono", monospace;
+}
+#tickButton:hover 
+{
+    background-color: #FF0000;
+}
+#tickButton:active 
+{
+    background-color: white;
+}
+
+#resetButton
+{
+    background-color: yellow;
+    border: none;
+    color: black;
+    height: 44px;
+    width: 122px;
+    border-top-right-radius: var(--lcars-radius);
+    border-bottom-right-radius: var(--lcars-radius);
+    transition-duration: var(--transition-s);
+    cursor: pointer;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+    margin-top: 5px;
+}
+#resetButton:hover 
+{
+    background-color: #000040;
+    color: yellow;
+}
+#resetButton:active 
+{
+    background-color: white;
+}
+
+
+
+
+
+
+/*  individual elements  */
+#busLabel
+{
+    background-color: wheat;
+    color: black;
+    margin-right: 4px;
+}
+#busValue
+{
+    cursor: pointer;
+    transition-duration: var(--transition-s);
+}
+#busValue:hover
+{
+    background-color: #FFFFFE;
+    color: gray;
+    
+}
+#busBadge
+{
+    background-color: wheat;
+}
+
+#pLabel
+{
+    background-color: #7840a1;
+}
+#pBadge
+{
+    background-color: #7840a1;
+}
+
+#aLabel
+{
+    background-color: tomato;
+    color: black;
+}
+#aBadge
+{
+    background-color: tomato;
+}
+
+
+#aluLabel
+{
+    background-color: teal;
+}
+#aluBadge
+{
+    background-color: teal;
+}
+
+
+#bLabel
+{
+    background-color: royalblue;
+}
+#bBadge
+{
+    background-color: royalblue;
+}
+
+
+#oLabel
+{
+    background-color: darkorange;
+    color: black;
+}
+#oBadge
+{
+    background-color: darkorange;
+}
+
+
+#mLabel
+{
+    background-color: darkviolet;
+    color: #FFFFFE;
+}
+#mBadge
+{
+    background-color: darkviolet;
+}
+
+#rLabel
+{
+    background-color: darkslateblue;
+    color: #FFFFFE;
+}
+#rBadge
+{
+    background-color: darkslateblue;
+}
+
+#iLabel
+{
+    background-color: lightgreen;
+    color: black;
+}
+#iBadge
+{
+    background-color: lightgreen;
+}
