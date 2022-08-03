@@ -322,3 +322,13 @@ body
 {
     background-color: lightgreen;
 }
+
+#nLabel
+{
+    background-color: #F05136;
+    color: black;
+}
+#nBadge
+{
+    background-color: #F05136;
+}

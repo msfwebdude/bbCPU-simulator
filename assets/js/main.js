@@ -324,6 +324,7 @@
 	let memAddrRegister = new CpuRegister(self.mValue);
 	let ramMemory       = new RamMemory(self.rValue);
 	let instrRegister   = new CpuRegister(self.iValue);
+	let inRegister      = new CpuRegister(self.nValue);
 			
 	clock.addEventListener("tick", aRegister.clockTick);
 	clock.addEventListener("tick", bRegister.clockTick);
@@ -333,6 +334,7 @@
 	clock.addEventListener("tick", memAddrRegister.clockTick);
 	clock.addEventListener("tick", ramMemory.clockTick);
 	clock.addEventListener("tick", instrRegister.clockTick);
+	clock.addEventListener("tick", inRegister.clockTick);
 
 	ram = createMemoryArray(255);
 
